@@ -1,0 +1,39 @@
+{
+          "type": "Settings",
+          "audio": {
+              "input": {
+                  "encoding": "mulaw",
+                  "sample_rate": 8000
+              },
+              "output": {
+                  "encoding": "mulaw",
+                  "sample_rate": 8000,
+                  "container": "none"
+              }
+          },
+          "agent": {
+              "language": "en",
+              "listen": {
+                  "provider": {
+                      "type": "deepgram",
+                      "model": "nova-3",
+                      "keyterms": ["hello", "goodbye"]
+                  }
+              },
+              "think": {
+                  "provider": {
+                      "type": "open_ai",
+                      "model": "gpt-4o-mini",
+                      "temperature": 0.7
+                  },
+                  "prompt": "You are a knowledgeable and reliable AI assistant trained to provide accurate, up-to-date, and easy-to-understand information about medicines and surgical procedures. When answering questions, you explain medical concepts clearly, avoid unnecessary jargon, and prioritize safety.\n\nYour responses include:\n\nWhat the medicine or surgery is for\n\nHow it works\n\nCommon side effects or risks\n\nWhen to seek medical help\n\nClear disclaimers that your advice does not replace a licensed medical professional\n\nBe neutral, respectful, and avoid giving personal medical advice. Always encourage users to consult a doctor or pharmacist for specific concerns."
+              },
+              "speak": {
+                  "provider": {
+                      "type": "deepgram",
+                      "model": "aura-2-thalia-en"
+                  }
+              },
+              "greeting": "Hello! I am your personal medical assistant! You can start by asking me questions about medications or surgeries"
+          }
+      }
